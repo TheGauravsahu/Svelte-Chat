@@ -46,7 +46,7 @@
 			>
 				{#if $user.displayName}
 					<p class="">Welcome {$user.displayName}</p>
-				{:else if $user.email}
+				{:else if $user.email != null}
 					<p class="">Welcome {$user.email}</p>
 				{:else}
 					<p class="">Welcome as Guest</p>

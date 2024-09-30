@@ -19,10 +19,12 @@
 		<h1 class="text-2xl">ChatApp</h1>
 		<div class="flex items-center gap-4">
 			{#if $user.displayName}
-				<p class="hidden md:block">Welcome {$user.displayName}</p>
-			{:else}
-				<p class="hidden md:block">Welcome {$user.email}</p>
-			{/if}
+					<p class="">Welcome {$user.displayName}</p>
+				{:else if $user.email}
+					<p class="">Welcome {$user.email}</p>
+				{:else}
+					<p class="">Welcome as Guest</p>
+				{/if}
 			{#if $user.photoURL}
 				<button on:click={() => (isOpen = !isOpen)}>
 					<img class="rounded-full w-8 cursor-pointer" src={$user.photoURL} alt="" />
@@ -46,7 +48,7 @@
 			>
 				{#if $user.displayName}
 					<p class="">Welcome {$user.displayName}</p>
-				{:else if $user.email != null}
+				{:else if $user.email}
 					<p class="">Welcome {$user.email}</p>
 				{:else}
 					<p class="">Welcome as Guest</p>

@@ -53,16 +53,16 @@
 	});
 
 	function formatTimestamp(timestamp) {
-	const date = new Date(timestamp);
-	return date.toLocaleString('en-GB', {
-		year: 'numeric',
-		month: '2-digit',
-		day: '2-digit',
-		hour: '2-digit',
-		minute: '2-digit',
-		hour12: true 
-	})
-}
+		const date = new Date(timestamp);
+		return date.toLocaleString('en-GB', {
+			year: 'numeric',
+			month: '2-digit',
+			day: '2-digit',
+			hour: '2-digit',
+			minute: '2-digit',
+			hour12: true
+		});
+	}
 </script>
 
 <section class="w-full h-full flex flex-col">

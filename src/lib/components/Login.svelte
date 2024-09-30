@@ -1,8 +1,5 @@
 <script>
-	import {
-		createUserWithEmailAndPassword,
-		signInWithEmailAndPassword
-	} from 'firebase/auth';
+	import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 	import { signInAnonymously } from 'firebase/auth';
 	import { auth, signInGoogle } from '../firebase.js';
 
@@ -66,7 +63,7 @@
 						clip-rule="evenodd"
 					/>
 				</svg>
-				<input type="password" class="grow" bind:value={password} />
+				<input type="password" placeholder="Password" class="grow" bind:value={password} />
 			</label>
 
 			<button class="btn" type="submit">
@@ -78,10 +75,8 @@
 			</button>
 		</form>
 		or
-		<button class="btn btn-accent" on:click={() =>signInGoogle()}>
-			Sign In with Google
-		</button>
-		<button on:click={() => signInAnonymously(auth)}>Sign In Anonymously</button>
+		<button class="btn btn-accent" on:click={() => signInGoogle()}> Sign In with Google </button>
+		<button class="underline" on:click={() => signInAnonymously(auth)}>Sign In Anonymously</button>
 
 		{#if mode == 'signIn'}
 			<button on:click={() => (mode = 'signUp')}>Don't have an account ? Sign Up</button>

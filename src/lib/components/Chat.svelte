@@ -69,7 +69,15 @@
 				<div class="chat chat-end">
 					<div class="chat-image avatar">
 						<div class="w-10 rounded-full">
-							<img alt={chat.uid} src={chat.avatar} />
+							{#if chat.avatar}
+								<img class="rounded-full w-8" src={chat.avatar} alt="" />
+							{:else}
+								<img
+									class="rounded-full w-8"
+									src="https://as1.ftcdn.net/v2/jpg/03/53/11/00/1000_F_353110097_nbpmfn9iHlxef4EDIhXB1tdTD0lcWhG9.jpg"
+									alt=""
+								/>
+							{/if}
 						</div>
 					</div>
 					<div class="chat-bubble">{chat.message}</div>

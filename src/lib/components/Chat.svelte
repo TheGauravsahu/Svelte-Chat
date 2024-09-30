@@ -53,18 +53,16 @@
 	});
 
 	function formatTimestamp(timestamp) {
-		const date = new Date(timestamp);
-		return date
-			.toLocaleString('en-GB', {
-				year: 'numeric',
-				month: '2-digit',
-				day: '2-digit',
-				hour: '2-digit',
-				minute: '2-digit',
-				hour12: true // Keep true for 12-hour format, false for 24-hour format
-			})
-			.replace(/:\d{2}\s/, ' '); // Remove seconds
-	}
+	const date = new Date(timestamp);
+	return date.toLocaleString('en-GB', {
+		year: 'numeric',
+		month: '2-digit',
+		day: '2-digit',
+		hour: '2-digit',
+		minute: '2-digit',
+		hour12: true 
+	}).replace(/:\d{2}(?!\d)/, ''); 
+}
 </script>
 
 <section class="w-full h-full flex flex-col">

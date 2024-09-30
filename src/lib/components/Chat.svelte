@@ -67,7 +67,7 @@
 </script>
 
 <section class="w-full h-full flex flex-col">
-	<div bind:this={chatContainer} class="flex-grow overflow-y-auto p-4 max-h-[70vh]">
+	<div bind:this={chatContainer} class="flex-grow overflow-y-auto max-h-[70vh]">
 		{#each chats as chat}
 			{#if $user.uid === chat.uid}
 				<div class="chat chat-end">

@@ -76,7 +76,7 @@
 		</form>
 		or
 		<button class="btn btn-accent" on:click={() => signInGoogle()}> Sign In with Google </button>
-		<button class="underline" on:click={() => signInAnonymously(auth)}>Sign In Anonymously</button>
+		<button class="underline" on:click={() => signInAnonymously(auth)}>Continue as Guest</button>
 
 		{#if mode == 'signIn'}
 			<button on:click={() => (mode = 'signUp')}>Don't have an account ? Sign Up</button>

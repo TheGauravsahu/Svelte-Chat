@@ -18,6 +18,8 @@
 		<div class="flex items-center gap-4">
 			{#if $user.displayName}
 				<p>Welcome {$user.displayName}</p>
+			{:else}
+				<p>Welcome {$user.email}</p>
 			{/if}
 			{#if $user.photoURL}
 				<img class="rounded-full w-8" src={$user.photoURL} alt="" />

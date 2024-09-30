@@ -2,7 +2,7 @@
 	import { onMount, afterUpdate } from 'svelte';
 	import { firestore } from '$lib/firebase.js';
 	import { user } from '$lib/firebase.js';
-	import { collection, addDoc, onSnapshot } from 'firebase/firestore';
+	import { collection, addDoc, onSnapshot, query, orderBy } from 'firebase/firestore';
 
 	let chatContainer;
 	let message = '';
@@ -36,7 +36,11 @@
 	function fetchMessages() {
 		const chatCollection = collection(firestore, 'chats');
 
-		onSnapshot(chatCollection, (chatSnapshot) => {
+		// Create a query to order by sentAt field in ascending order
+		const chatQuery = query(chatCollection, orderBy('sentAt', 'asc'));
+
+		// Use the query to fetch and listen to changes in the chat collection
+		onSnapshot(chatQuery, (chatSnapshot) => {
 			chats = chatSnapshot.docs.map((doc) => ({
 				id: doc.id,
 				...doc.data()

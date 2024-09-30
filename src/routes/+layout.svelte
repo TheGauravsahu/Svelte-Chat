@@ -41,7 +41,7 @@
 
 		<!-- small device -->
 		{#if isOpen}
-			<div class="bg-zinc-100 shadow-lg h-fit w-[250px] absolute z-[99] right-4 top-20 p-4">
+			<div class="bg-zinc-100 shadow-lg h-fit w-[250px] absolute z-[99] right-4 top-20 p-4 block md:hidden lg:hidden">
 				{#if $user.displayName}
 					<p class="">Welcome {$user.displayName}</p>
 				{:else}
